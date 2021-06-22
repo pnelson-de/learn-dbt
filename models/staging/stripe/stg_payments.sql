@@ -4,4 +4,4 @@ SELECT orderid as order_id,
        {{ cents_to_dollars('amount') }} as amount,
        created
 FROM {{ source('stripe', 'payment')}}
-{{ limit_dev_data('created', 10000) }}
+--{{ limit_dev_data('created', 10000) }}
