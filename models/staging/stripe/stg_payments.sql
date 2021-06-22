@@ -4,3 +4,4 @@ SELECT orderid as order_id,
        amount / 100 as amount,
        created
 FROM {{ source('stripe', 'payment')}}
+{{ limit_dev_data('created', 10000) }}
